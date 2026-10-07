@@ -28,8 +28,7 @@ export default function App() {
   const [query, setQuery] = useState('');
   const normalizedQuery = query.trim().toLocaleLowerCase('ru-RU');
   const filteredNotes = notes.filter(note => `${note.title}\n${note.body}`.toLocaleLowerCase('ru-RU').includes(normalizedQuery));
-  // Поиск фильтрует только меню: открытая запись остаётся в редакторе,
-  // чтобы ввод не терял фокус, если текст перестал совпадать с запросом.
+
   const selectedNote = notes.find(note => note.id === selectedId);
   function handleCreate() { setQuery(''); createNote(); }
 
